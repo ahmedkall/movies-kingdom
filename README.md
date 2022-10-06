@@ -1,5 +1,6 @@
 # trainingProjectLab
 Training Project Lab by Ahmed, Yassine, and Iheb ____ MovieKingdom
+
 The Movie Database System is a dynamic web tool designed for viewing basic movie
 information including casting, trailers, ratings, and so forth. It is intended to serve as a one-stop
 shop where users can obtain upcoming, in-theater, DVD/Blu-ray, and digital movies.
