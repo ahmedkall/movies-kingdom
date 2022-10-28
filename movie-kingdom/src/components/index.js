@@ -6,3 +6,4 @@ export {default as Profile} from './Profile/Profile';
 export {default as Sidebar} from './SideBar/Sidebar';
 export {default as MovieList} from './MovieList/MovieList';
 export {default as Movie} from './Movie/Movie';
+export {default as Pagination} from './Pagination/Pagination'

@@ -4,9 +4,9 @@ import useStyles from './styles';
 import { ClassNames } from '@emotion/react';
 
 const Pagination = ({currentPage, setPage,totalPages}) => {
-    
+  const classes= useStyles();
     if(totalPages===0) return null;
-    const classes= useStyles();
+    
 
     const prevButton=(currentPage)=>{
         if(currentPage !==1)
@@ -14,7 +14,7 @@ const Pagination = ({currentPage, setPage,totalPages}) => {
     }
     const nextButton=(currentPage)=>{
         if(currentPage!==totalPages)
-        setPage((prevPage)=>prevPage+1)
+        setPage((prevPage)=>prevPage+1 )
     }
   return (
     <div className= {classes.container}>
