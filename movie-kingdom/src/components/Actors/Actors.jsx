@@ -1,12 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const Actors = () => {
-    console.log('Actors')
   return (
-    <div>
-    Actors
-    </div>
+    <div>Actors</div>
   )
-}
+};
 
-export default Actors
+export default Actors;

@@ -1,19 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { AppBar, IconButton, Toolbar, Drawer , Button, Avatar , useMediaQuery} from '@mui/material';
-import {Menu, Brightness4, Brightness7} from '@mui/icons-material'
+import {Menu, AccountCircle, Brightness4, Brightness7} from '@mui/icons-material'
 import { Link } from 'react-router-dom';
 import useStyles from './style'
 import { useTheme} from '@mui/material/styles';
+import Search from '../Search/Search';
 import Sidebar from '../SideBar/Sidebar';
 
 
-
 const NavBar = () => {
-    
     const classes = useStyles();
+    const [mobileOpen, setMobileOpen] = useState(false);
     const isMobile = useMediaQuery('(max-width:600px')
     const theme = useTheme();
-    
+    const isAutheticated= true;
   return (
     <>
         <AppBar positon = 'fixed'>
@@ -23,7 +23,7 @@ const NavBar = () => {
                         color= "inherit"
                         edge = "start"
                         style={ {outline: 'none'}}
-                        onClick = {() =>{} } 
+                        onClick = {() => setMobileOpen ( ( prevMobileOpen ) => !prevMobileOpen ) } 
                         className = {classes.menuButton}
                     >
                         <Menu />
@@ -32,13 +32,18 @@ const NavBar = () => {
                 <IconButton color = 'inherit' sx= {{ ml: 1 } } onClick = {() => {}}>  {/* ml= margin left */}
                     {theme.palette.mode === 'dark' ? <Brightness7/> : <Brightness4/> }
                 </IconButton>
-                {!isMobile}
+                {!isMobile && <Search/> }
                 <div>
-                     
+                    {!isAutheticated ? ( 
+                        <Button color = 'inherit' onClick={() => {}}>
+                            Login &nbsp; <AccountCircle/> {/*&nbsp = space*/} 
+                        </Button>
+
+                    ) : (
                         <Button
                             color = 'inherit' 
                             component= {Link} 
-                            to= {``}
+                            to= {`/profile/:id`}
                             className= {classes.linkButton}
                             onClick = {()=>{}}
                             >
@@ -53,9 +58,9 @@ const NavBar = () => {
                             
                         </Button>
 
-                    
+                    )}
                 </div>
-                {isMobile}
+                {isMobile && <Search/>}
             </Toolbar>
         </AppBar> 
         {/*sidebar*/}
@@ -66,17 +71,18 @@ const NavBar = () => {
                             <Drawer
                                 variant= "temporary"
                                 anchor= "right" 
-                                onClose= {()=> {} }
+                                open ={mobileOpen}
+                                onClose= {()=> setMobileOpen ((prevMobileOpen)=> !prevMobileOpen) }
                                 classes= {{paper: classes.drawerPaper}}
                                 ModalProps= {{keepMounted: true}}
                             >
-                                <Sidebar/>
+                                <Sidebar setMobileOpen={setMobileOpen}/>
 
                             </Drawer>
                         ):(
                             
                             <Drawer classes ={{paper: classes.drawerPaper}} variant="permanent" open>
-                                <Sidebar/>
+                                <Sidebar setMobileOpen={setMobileOpen}/>
                             </Drawer>
 
                         )}
