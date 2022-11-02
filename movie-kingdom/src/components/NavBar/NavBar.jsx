@@ -32,7 +32,11 @@ const NavBar = () => {
                 <IconButton color = 'inherit' sx= {{ ml: 1 } } onClick = {() => {}}>  {/* ml= margin left */}
                     {theme.palette.mode === 'dark' ? <Brightness7/> : <Brightness4/> }
                 </IconButton>
+<<<<<<< HEAD
                 {!isMobile && <Search/> }
+=======
+                {!isMobile && 'search..'}
+>>>>>>> af2192a6a13c1796025f12304b79a8a35dd50524
                 <div>
                     {!isAutheticated ? ( 
                         <Button color = 'inherit' onClick={() => {}}>
@@ -60,7 +64,11 @@ const NavBar = () => {
 
                     )}
                 </div>
+<<<<<<< HEAD
                 {isMobile && <Search/>}
+=======
+                {isMobile && 'search..'}
+>>>>>>> af2192a6a13c1796025f12304b79a8a35dd50524
             </Toolbar>
         </AppBar> 
         {/*sidebar*/}
