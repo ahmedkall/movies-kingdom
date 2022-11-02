@@ -32,11 +32,8 @@ const Sidebar = ({setMobileOpen}) => {
                 
                 className= {classes.image}
                 src= {theme.palette.mode === 'light' ? redLogo :blueLogo }
-<<<<<<< HEAD
                 alt="Logo"
-=======
-                alt="Movilix Logo"
->>>>>>> af2192a6a13c1796025f12304b79a8a35dd50524
+
             />
         </Link>
         <Divider/>
