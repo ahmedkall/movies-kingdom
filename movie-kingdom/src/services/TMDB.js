@@ -45,14 +45,29 @@ export const tmdbApi = createApi({
         getMovie: builder.query({
             query: (id)=> `/movie/${id}?append_to_response=videos&api_key=${tmdbApiKey}`
         }),
+        //*Get Credits
+        getCredits: builder.query({
+            query: (id)=> `/movie/${id}/credits?api_key=${tmdbApiKey}`
+        }),
+        getSimilarMovie: builder.query({
+            query: (id)=> `/movie/${id}/similar?api_key=${tmdbApiKey}`,
+        }),
+        getActor: builder.query({
+            query: (id)=> `/person/${id}?api_key=${tmdbApiKey}`,
+        }),
+        //https://api.themoviedb.org/3/person/{person_id}/movie_credits?api_key=<<api_key>>&language=en-US
+        getMovieCredits: builder.query({
+            query: (id)=> `/person/${id}/movie_credits?api_key=${tmdbApiKey}`,
+        }),
     }),
 });
-
 
 export const {
     useGetGenresQuery,
     useGetMoviesQuery,
     useGetMovieQuery,
-
-
+    useGetCreditsQuery,
+    useGetSimilarMovieQuery,
+    useGetActorQuery,
+    useGetMovieCreditsQuery
 }= tmdbApi;
