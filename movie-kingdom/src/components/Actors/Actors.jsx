@@ -99,8 +99,8 @@ const Actors = () => {
           variant="contained"
           target="_blank"
           rel="noopener noreferrer"
-          href={`https://www.imdb.com/name/nm${data.imdb_id}`}
-          endIcon={<MovieIcon />} 
+          href={`https://www.imdb.com/name/${data.imdb_id}`}
+          endIcon={<MovieIcon />}
         >
           imDb
         </Button>

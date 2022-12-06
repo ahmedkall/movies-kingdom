@@ -7,7 +7,7 @@ import { ClassNames } from '@emotion/react';
 import useStyles from './styles';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
-
+import genreIcons from '../../assets/genres'
 
 const categories = [ 
   {label: 'Popular', value: 'popular'},
@@ -43,7 +43,7 @@ const Sidebar = ({setMobileOpen}) => {
               <Link key={value} className ={classes.links} to= "/">
                 <ListItem onClick={() => dispatch ( selectGenreOrCategory(value) ) } button>
                     <ListItemIcon>
-                      <img src={redLogo} className = {classes.genreImages} height = {30} />
+                      <img src={genreIcons[label.toLowerCase()]} className = {classes.genreImages} height = {30} />
                     </ListItemIcon>
                     <ListItemText primary= {label}/>
                 </ListItem>
@@ -67,9 +67,9 @@ const Sidebar = ({setMobileOpen}) => {
                 data.genres.map ( ({name,id}) => (  
                   <Link key={name} className ={classes.links} to= "/">
                     <ListItem onClick={() =>dispatch ( selectGenreOrCategory(id) )  } button>
-                        {/* <ListItemIcon>
-                          <img src={redLogo} className = {classes.genreImages} height = {30} />
-                        </ListItemIcon> */}
+                        <ListItemIcon>
+                          <img src={genreIcons[name.toLowerCase()]} className = {classes.genreImages} height = {30} />
+                        </ListItemIcon>
                       <ListItemText primary= {name}/>
                     </ListItem>
                  </Link>
