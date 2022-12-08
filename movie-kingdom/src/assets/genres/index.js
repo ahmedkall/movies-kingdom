@@ -21,6 +21,8 @@ import western from './Western.png';
 import popular from './Popular.png'
 import topRated from './TopRated.png'
 import upcoming from './Upcoming.png'
+import logo from './logo.png'
+import logoInverted from './logoInverted.png'
 
 export default{
     action,
@@ -45,4 +47,6 @@ export default{
     popular,
     'top rated':topRated,
     upcoming,
+    logo,
+    logoInverted
 };

@@ -16,8 +16,6 @@ const categories = [
 
 ];
 
-const redLogo= "";
-const blueLogo= "";
 
 const Sidebar = ({setMobileOpen}) => {
     const theme = useTheme();
@@ -31,7 +29,7 @@ const Sidebar = ({setMobileOpen}) => {
             <img
                 
                 className= {classes.image}
-                src= {theme.palette.mode === 'light' ? redLogo :blueLogo }
+                src= {theme.palette.mode === 'light' ? genreIcons['logoInverted'] :genreIcons['logo'] }
                 alt="Logo"
 
             />

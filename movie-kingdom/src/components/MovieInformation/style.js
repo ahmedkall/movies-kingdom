@@ -72,7 +72,7 @@ export default makeStyles( (theme) => ( {
         genreImage:{
             filter: theme.palette.mode ==='dark' && 'invert(1)',
             marginRight:'10px',
-            width: '60%'
+            width: '30%'
         },
         links:{
             display:'flex',
