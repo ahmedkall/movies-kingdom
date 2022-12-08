@@ -40,9 +40,9 @@ export default makeStyles( (theme) => ( {
             objectFit:'cover',
             borderRadius:'10px'
         },
-        buttonContainer:{
+        buttonsContainer:{
             display:'flex',
-            justifyContent:'space-between',
+            justifyContent:'space-evenly',
             width:'100%',
             [theme.breakpoints.down('sm')]:{
                 flexDirection:'column',
@@ -78,6 +78,7 @@ export default makeStyles( (theme) => ( {
             display:'flex',
             justifyContent:'cneter',
             alignItems:'center',
+            textDecoration:'none',
             [theme.breakpoints.down('sm')]:{
                 padding:'0.5rem 1 rem'
             }

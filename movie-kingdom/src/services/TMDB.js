@@ -59,6 +59,10 @@ export const tmdbApi = createApi({
         getMovieCredits: builder.query({
             query: (id)=> `/person/${id}/movie_credits?api_key=${tmdbApiKey}`,
         }),
+        //get user specific movie list
+        getList: builder.query({
+            query:( {listName,accountId,sessionId,page} )=>`/account/${accountId}/${listName}?api_key=${tmdbApiKey}&session_id=${sessionId}&page=${page}`
+        })
     }),
 });
 
@@ -69,5 +73,6 @@ export const {
     useGetCreditsQuery,
     useGetSimilarMovieQuery,
     useGetActorQuery,
-    useGetMovieCreditsQuery
+    useGetMovieCreditsQuery,
+    useGetListQuery
 }= tmdbApi;
