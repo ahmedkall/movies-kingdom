@@ -18,16 +18,17 @@ export default makeStyles( (theme) => ( {
             borderRadius: '20px',
             boxShadow: '0.5em 1em 1em rgb(64,54,70)',
             width: '90%',
-            [theme.breakpoints.down('sm')]:{
-                margin: '0 auto',
-                width: '100%',
-                marginBottom: '30px',
-            },
+
             [theme.breakpoints.down('md')]:{
                 margin: '0 auto',
                 width: '80%',
                 marginBottom: '30px',
 
+            },
+            [theme.breakpoints.down('sm')]:{
+                margin: '0 auto',
+                width: '100%',
+                marginBottom: '30px',
             }
 
 
@@ -60,6 +61,27 @@ export default makeStyles( (theme) => ( {
                 width:'90%',
                 height:'90%',
             }
+
+        },
+        genresContainer:{
+            margin:'10px 0 !important',
+            display:'flex',
+            justifyContent:'space-around',
+            flexWrap:'wrap'
+        },
+        genreImage:{
+            filter: theme.palette.mode ==='dark' && 'invert(1)',
+            marginRight:'10px',
+            width: '60%'
+        },
+        links:{
+            display:'flex',
+            justifyContent:'cneter',
+            alignItems:'center',
+            [theme.breakpoints.down('sm')]:{
+                padding:'0.5rem 1 rem'
+            }
+
 
         }
 }));

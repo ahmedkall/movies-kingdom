@@ -6,14 +6,16 @@ import { useDispatch,useSelector } from 'react-redux';
 import axios from 'axios';
 import { useGetMovieQuery, useGetCreditsQuery, useGetSimilarMovieQuery } from '../../services/TMDB';
 import useStyles from './style';
-
+import genreIcons from '../../assets/genres'
 import { MovieList } from '..';
+import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 
 
 const MovieInformation = () => {
   const [open, setopen] = useState(false)
   const {id}=useParams();
   const classes= useStyles();
+  const dispatch = useDispatch();
   const {data,isFetching,error} =useGetMovieQuery(id);
   const {data: dataCredits ,isFetching: isFetchingCredits ,error: errorCredits} =useGetCreditsQuery(id);
   const {data: dataSimilarMovies ,isFetching: isFetchingSimilarMovies ,error: errorSimilarMovies} =useGetSimilarMovieQuery(id);
@@ -100,8 +102,11 @@ const MovieInformation = () => {
         <Grid item className={classes.genresContainer}> {/*style to be added*/}
               {data.genres?
                  data.genres.map((genre,i)=>(
-                <Link key={genre.name} className={classes.links} to='/' onClick={()=>{ }}>
-                  /*genre images to be added.
+                <Link key={genre.name} className={classes.links} to='/' onClick={()=>{dispatch(selectGenreOrCategory(genre.id))}} >
+                  <img src={genreIcons[genre.name.toLowerCase()]} className={classes.genreImage}/>
+                  <Typography color='textPrimary' variant='subtitle1' >
+                    {genre?.name}
+                  </Typography>
                 </Link>
               )) : 'null'  
               }
