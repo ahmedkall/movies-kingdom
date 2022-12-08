@@ -40,8 +40,8 @@ const Profile = () => {
 			) : (
 				<Box>
             
-            <RatedMovies title={favoriteMovies.results.length==0?'':"Favorite Movies"} movies={favoriteMovies} />
-            <RatedMovies title={watchlistMovies.results.length==0?'':"Watchlist"} movies={watchlistMovies} /> 
+            <RatedMovies title={"Favorite Movies"} movies={favoriteMovies} />
+            <RatedMovies title={"Watchlist"} movies={watchlistMovies} /> 
         </Box>
 			)}
 		</Box>
