@@ -93,7 +93,7 @@ const Actors = () => {
           {data.biography? data.biography:`We apologize, we couldn't find a biography for this actor`}
         </Typography>
       </Grid>
-      <Box marginTop="2rem" display="flex" justifyContent="space-around">
+      <Box marginTop="2rem" display="block" justifyContent="space-around">
         <Button
           size="small"
           variant="contained"

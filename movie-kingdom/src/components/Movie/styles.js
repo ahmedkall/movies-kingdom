@@ -2,7 +2,11 @@ import { makeStyles } from "@mui/styles";
 
 export default makeStyles( (theme) => ( {
        movie:{
-        padding: "10px",
+
+        paddingRight:"45px",
+        paddingLeft:"45px",
+        paddingBottom:"20px"
+        
        },
        links:{
               alignItems: 'center',
@@ -19,7 +23,7 @@ export default makeStyles( (theme) => ( {
 
        },
        image:{
-              borderRadius: '20px',
+              borderRadius: '25px',
               height: '300px',
               marginBottom: '10px',
               '&:hover': {
