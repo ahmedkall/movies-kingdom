@@ -30,12 +30,12 @@ jobs:
           push: true
           tags: ${{ env.DOCKER_IMAGE_NAME }}
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Publish to github packages registry
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          commit_message: Deploy from GitHub Actions
-          commit_user_name: GitHub Actions
-          commit_email: actions@github.com
-          docker_image_name: ${{ env.DOCKER_IMAGE_NAME }}
-          docker_image_tag: latest
+          name: ahmed0-0kallel/trainingProjectLab/${{ env.DOCKER_IMAGE_NAME }}
+          registry: docker.pkg.github.com
+          username: ahmed0-0kallel
+          password: ${{ secrets.GITHUB_TOKEN }}
+          dockerfile: ./client/DockerFile.prod
+          tags: latest
