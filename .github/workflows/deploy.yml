@@ -50,7 +50,7 @@ jobs:
         run: docker create --name react_app_container ${{ env.DOCKER_IMAGE_NAME }}:latest
 
       - name: Copy built React app from Docker container
-        run: docker cp react_app_container:/usr/share/nginx/html ./client/build
+        run: docker cp react_app_container:/usr/share/nginx/html ./build
 
       - name: Remove Docker container
         run: docker rm react_app_container
