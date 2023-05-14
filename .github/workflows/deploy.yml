@@ -45,3 +45,18 @@ jobs:
 
       - name: Push Docker image to GitHub Packages
         run: docker push ghcr.io/${{ github.repository }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+
+      - name: Create Docker container
+        run: docker create --name react_app_container ${{ env.DOCKER_IMAGE_NAME }}:latest
+
+      - name: Copy built React app from Docker container
+        run: docker cp react_app_container:/usr/share/nginx/html ./build
+
+      - name: Remove Docker container
+        run: docker rm react_app_container
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
