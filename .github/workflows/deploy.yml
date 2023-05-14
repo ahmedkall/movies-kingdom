@@ -7,7 +7,6 @@ on:
 
 env:
   DOCKER_IMAGE_NAME: oussamf/carthagians
-  REPO_NAME: trainingProjectLab
 
 jobs:
   build-and-deploy:
@@ -42,7 +41,7 @@ jobs:
         run: docker pull ${{ env.DOCKER_IMAGE_NAME }}:latest
 
       - name: Tag Docker image for GitHub Packages
-        run: docker tag ${{ env.DOCKER_IMAGE_NAME }}:latest ghcr.io/${{ env.REPO_NAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+        run: docker tag ${{ env.DOCKER_IMAGE_NAME }}:latest ghcr.io/${{ github.repository }}/${{ env.DOCKER_IMAGE_NAME }}:latest
 
       - name: Push Docker image to GitHub Packages
-        run: docker push ghcr.io/${{ env.REPO_NAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+        run: docker push ghcr.io/${{ github.repository }}/${{ env.DOCKER_IMAGE_NAME }}:latest
