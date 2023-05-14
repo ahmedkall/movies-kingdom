@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./client
-          file: ./client/DockerFile.dev
+          file: ./client/DockerFile.prod
           push: true
           tags: ${{ env.DOCKER_IMAGE_NAME }}
 
