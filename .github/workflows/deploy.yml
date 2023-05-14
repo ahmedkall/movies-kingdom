@@ -30,12 +30,18 @@ jobs:
           push: true
           tags: ${{ env.DOCKER_IMAGE_NAME }}
 
-      - name: Publish to github packages registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
-          name: ahmed0-0kallel/trainingProjectLab/${{ env.DOCKER_IMAGE_NAME }}
-          registry: docker.pkg.github.com
-          username: ahmed0-0kallel
+          registry: ghcr.io
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          dockerfile: ./client/DockerFile.prod
-          tags: latest
+
+      - name: Pull Docker image from Docker Hub
+        run: docker pull ${{ env.DOCKER_IMAGE_NAME }}:latest
+
+      - name: Tag Docker image for GitHub Packages
+        run: docker tag ${{ env.DOCKER_IMAGE_NAME }}:latest ghcr.io/${{ github.repository }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+
+      - name: Push Docker image to GitHub Packages
+        run: docker push ghcr.io/${{ github.repository }}/${{ env.DOCKER_IMAGE_NAME }}:latest
