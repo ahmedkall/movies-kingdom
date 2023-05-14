@@ -7,7 +7,7 @@ on:
 
 env:
   DOCKER_IMAGE_NAME: oussamf/carthagians
-  REPO_NAME: trainingprojectlab
+  REPO_NAME: trainingProjectLab
 
 jobs:
   build-and-deploy:
