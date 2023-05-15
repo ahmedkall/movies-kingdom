@@ -7,6 +7,7 @@ on:
 
 env:
   DOCKER_IMAGE_NAME: oussamf/carthagians
+  REACT_APP_TMDB_KEY: ${{ secrets.REACT_APP_TMDB_KEY}}
 
 jobs:
   build-and-deploy:
