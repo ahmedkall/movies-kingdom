@@ -1,6 +1,7 @@
 {
   "name": "movie-kingdom",
   "version": "0.1.0",
+  "homepage": "https://ahmedkall.github.io/movies-kingdom/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",

@@ -9,15 +9,14 @@ import store from './app/store'
 
 const theme = createTheme({});
 
-ReactDOM.render( 
-<Provider store = {store}>  
-    <ToggleDarkMode>
-        <BrowserRouter> 
-            <App/>
+ReactDOM.render(
+    <Provider store={store}>
+      <ToggleDarkMode>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <App />
         </BrowserRouter>
-    </ToggleDarkMode> 
-</Provider>,
-document.getElementById('root')
-);
-
-
+      </ToggleDarkMode>
+    </Provider>,
+    document.getElementById('root')
+  );
+  
