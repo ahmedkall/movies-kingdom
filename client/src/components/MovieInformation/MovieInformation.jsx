@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Modal, Typography, ButtonGroup, Grid, Box, CircularProgress, useMediaQuery, Rating, Button } from "@mui/material";
+import { Modal, Typography, ButtonGroup, Grid, Box, CircularProgress, Rating, Button } from "@mui/material";
 import { Theaters, Movie as MovieIcon, Language, PlusOne, Favorite, FavoriteBorderOutlined, Remove, ArrowBack } from "@mui/icons-material";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

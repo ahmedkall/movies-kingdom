@@ -1,8 +1,6 @@
 import React from 'react'
 import { Typography,Button } from '@mui/material';
 import useStyles from './styles';
-import { ClassNames } from '@emotion/react';
-
 const Pagination = ({currentPage, setPage,totalPages}) => {
   const classes= useStyles();
     if(totalPages===0) return null;

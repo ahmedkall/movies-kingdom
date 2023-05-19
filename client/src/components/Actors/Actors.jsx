@@ -2,41 +2,30 @@ import React from 'react';
 import { useState } from 'react';
 import {
   useGetActorQuery,
-  useGetMoviesQuery,
   useGetMovieCreditsQuery,
 } from '../../services/TMDB';
 import {
-  Theaters,
   Movie as MovieIcon,
-  Language,
-  PlusOne,
-  Favorite,
-  FavoriteBorderOutlined,
-  Remove,
   ArrowBack,
 } from '@mui/icons-material';
 
 import { Link, useParams } from 'react-router-dom';
 import {
-  Modal,
   Typography,
-  ButtonGroup,
   Grid,
   Box,
   CircularProgress,
-  useMediaQuery,
-  Rating,
   Button,
 } from '@mui/material';
 import useStyles from './style';
-import { MovieList, Pagination } from '..';
+import { MovieList } from '..';
 
 const Actors = () => {
   const [page, setPage] = useState(1);
   const { id } = useParams();
   const { data, isFetching, error } = useGetActorQuery(id);
-  console.log(id,page)
-  
+  console.log(id, page)
+
   const {
     data: movieCredits,
     isFetching: isFetchingMovieCredits,
@@ -90,7 +79,7 @@ const Actors = () => {
           Born:{data.birthday}
         </Typography>
         <Typography style={{ marginBottom: '2rem' }}>
-          {data.biography? data.biography:`We apologize, we couldn't find a biography for this actor`}
+          {data.biography ? data.biography : `We apologize, we couldn't find a biography for this actor`}
         </Typography>
       </Grid>
       <Box marginTop="2rem" display="block" justifyContent="space-around">
@@ -127,7 +116,7 @@ const Actors = () => {
         )}
       </Box>
       {console.log(movieCredits.cast.length)}
-     
+
     </Grid>
   );
 };

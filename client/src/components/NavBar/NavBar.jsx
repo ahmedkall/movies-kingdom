@@ -40,7 +40,7 @@ const NavBar = () => {
             }
         }
         logInUser();
-      }, [token])
+      }, [dispatch, sessionIDfromLS, token])
     
   return (
     <>

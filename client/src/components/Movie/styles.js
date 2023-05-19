@@ -12,13 +12,12 @@ export default makeStyles( (theme) => ( {
               alignItems: 'center',
               fontWeight: 'bolder',
               textDecoration: 'none',
-              [theme.breakpoints.up('xs')]: {
-                     display: 'flex',
-                     flexDirection:'column',
-              },
+              // [theme.breakpoints.up('xs')]: {
+              //        display: 'flex',
+              //        flexDirection:'column',
+              // },
               '&:hover': {
-                     cursor: 'pointer',
-                     
+                     cursor: 'pointer',                  
               },
 
        },
@@ -34,7 +33,7 @@ export default makeStyles( (theme) => ( {
        ,
 
        title:{
-        color: theme.palette.text.primary,
+        //color: theme.palette.text.primary,
         textOverflow: 'ellipsis',
         width: '230px',
         whiteSpace: 'nowrap',

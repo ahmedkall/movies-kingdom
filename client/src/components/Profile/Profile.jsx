@@ -3,7 +3,7 @@ import { Typography, Button, Box } from "@mui/material";
 import { ExitToApp } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { userSelector } from "../../features/authentication";
-import { useGetMovieQuery, useGetCreditsQuery, useGetSimilarMovieQuery, useGetListQuery } from "../../services/TMDB";
+import { useGetListQuery } from "../../services/TMDB";
 import RatedMovies from "../RatedMovies/RatedMovies";
 
 const Profile = () => {
@@ -23,7 +23,7 @@ const Profile = () => {
 	useEffect(() => {
 		refetchFavorites();
 		refetchWatchlisted();
-	}, []);
+	},);
 
 	return (
 		<Box>

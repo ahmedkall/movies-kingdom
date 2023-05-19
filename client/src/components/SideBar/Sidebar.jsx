@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+/* eslint-disable jsx-a11y/alt-text */
+import React from 'react';
 import {Divider, List,ListItem, ListItemText,ListSubheader,ListItemIcon,Box,CircularProgress} from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useTheme } from '@mui/styles';
-import { ClassNames } from '@emotion/react';
 import useStyles from './styles';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
@@ -16,22 +16,18 @@ const categories = [
 
 ];
 
-
 const Sidebar = ({setMobileOpen}) => {
     const theme = useTheme();
     const classes= useStyles();
-    const {data,isFetching,error}=useGetGenresQuery();
+    const {data,isFetching}=useGetGenresQuery();
     const dispatch = useDispatch();
-    const {genreIdOrCategoryName}= useSelector((state)=> state.currentGenreOrCategory);
   return (
     <>
         <Link to="/" className={classes.imageLink}>
-            <img
-                
+            <img         
                 className= {classes.image}
                 src= {theme.palette.mode === 'light' ? genreIcons['logoInverted'] :genreIcons['logo'] }
                 alt="Logo"
-
             />
         </Link>
         <Divider/>

@@ -11,9 +11,11 @@ function ToggleDarkMode({ children }) {
   };
 
   const theme = useMemo(() => createTheme({
+    
     palette: {
       mode,
     },
+    
   }), [mode]);
 
   return (
