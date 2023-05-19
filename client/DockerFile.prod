@@ -3,7 +3,10 @@ WORKDIR /client
 COPY package.json .
 RUN npm i
 COPY . .
+ARG REACT_APP_TMDB_KEY
+ENV REACT_APP_TMDB_KEY=$REACT_APP_TMDB_KEY
 RUN npm run build
+RUN echo "REACT_APP_TMDB_KEY=$REACT_APP_TMDB_KEY" > /client/build/.env
 
 FROM nginx
 COPY --from=build /client/build /usr/share/nginx/html
