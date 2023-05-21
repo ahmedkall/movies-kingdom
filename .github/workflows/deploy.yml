@@ -19,7 +19,9 @@ jobs:
       - name: Build and test Docker image
         run: |
           docker build -t $DOCKER_IMAGE_NAME .
-          docker run $DOCKER_IMAGE_NAME npm test > test-results.txt
+          docker run -t -d --name test-container $DOCKER_IMAGE_NAME npm test
+          docker logs -f test-container > test-results.txt
+          docker rm test-container
 
       - name: Check test status
         id: check-tests
