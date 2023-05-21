@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/movies-kingdom/static/js/main.5830f91a.js",
+    "main.js": "/movies-kingdom/static/js/main.3fe8ff61.js",
     "static/media/logo.png": "/movies-kingdom/static/media/logo.cf56aa0f477c592486ee.png",
     "static/media/logoInverted.png": "/movies-kingdom/static/media/logoInverted.aa60b92f42d999c4e3df.png",
     "index.html": "/movies-kingdom/index.html",
-    "main.5830f91a.js.map": "/movies-kingdom/static/js/main.5830f91a.js.map"
+    "main.3fe8ff61.js.map": "/movies-kingdom/static/js/main.3fe8ff61.js.map"
   },
   "entrypoints": [
-    "static/js/main.5830f91a.js"
+    "static/js/main.3fe8ff61.js"
   ]
 }
