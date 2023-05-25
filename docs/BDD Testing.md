@@ -86,13 +86,13 @@ List the test scenarios or user stories you focused on during testing. This help
 
 ### **Test Results:**
 
-![Untitled](BDD%20Testing%20ab1c39c36ef941d68b58d0791bb4753d/Untitled.png)
+![Untitled](Results/Untitled.png)
 
-![Untitled](BDD%20Testing%20ab1c39c36ef941d68b58d0791bb4753d/Untitled%201.png)
+![Untitled](Results/Untitled%201.png)
 
-![Untitled](BDD%20Testing%20ab1c39c36ef941d68b58d0791bb4753d/Untitled%202.png)
+![Untitled](Results/Untitled%202.png)
 
-![Untitled](BDD%20Testing%20ab1c39c36ef941d68b58d0791bb4753d/Untitled%203.png)
+![Untitled](Results/Untitled%203.png)
 
 **Conclusion:**
 
