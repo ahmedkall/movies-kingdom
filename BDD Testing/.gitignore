@@ -5,8 +5,6 @@
 /.pnp
 .pnp.js
 
-./BDD Testing/node_modules
-
 # testing
 /coverage
 

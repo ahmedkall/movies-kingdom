@@ -23,12 +23,14 @@ const Search = () => {
     
   return ( 
     <div className={classes.searchContainer}>
-      <TextField
+      <TextField 
+        data-testid='searchBar'
         onKeyPress={handleKeyPress}
         value= {query}
         onChange={(e)=> setQuery(e.target.value)}
         variant = "standard"
         InputProps={{
+          'data-testid': 'searchBarInput' ,
           className: classes.input,
           startAdornment: (
             <InputAdornment position='start'>
