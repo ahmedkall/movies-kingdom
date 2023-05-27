@@ -1,0 +1,9 @@
+I am testing the movie library project using the React Testing Library to ensure the components behave as expected.
+
+First, I have a test to check if clicking on a genre link updates the movie list component. This is done by rendering the NavBar and Movies components, finding a genre link, clicking on it, and then checking if the movie list updates with the correct number of movies.
+
+Next, I have a test to ensure that searching for a movie name in the search bar returns movies with that name. This is done by rendering the NavBar and Movies components, simulating a user typing a movie name in the search bar, pressing Enter, and then checking if the movie list updates with the correct number of movies containing the searched term.
+
+Lastly, I have a test to check if the MovieList component renders without crashing and renders the correct number of movies based on the numbersOfMoviesToShow prop.
+
+These tests ensure that the movie library project behaves as expected, providing a reliable and robust user experience.
